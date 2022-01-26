@@ -17,7 +17,7 @@ router.post('/',async (req,res) => {
    const Streak = req.body.streak
    const MissedDays = req.body.missedDays
 
-    // Before Creating a user i need to check if email exists or not
+    
     const newUser = new User({
         
         email: Email,
@@ -29,7 +29,9 @@ router.post('/',async (req,res) => {
         missedDays:MissedDays
 
     })
+    
     try {
+        // Check if Email Exists 
         const exists = await User.findOne({email:Email}).select("email").lean()
         if(exists) {
             res.status(400).json({message: "User already exists",response:"1"})
