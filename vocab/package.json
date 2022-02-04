@@ -4,7 +4,8 @@
   "description": "Backend for vocab",
   "main": "index.js",
   "scripts": {
-    "runDev": "nodemon index.js"
+    "runDev": "nodemon index.js",
+    "start":"node index"
   },
   "author": "Adarsh , ChaseDreams",
   "license": "ISC",

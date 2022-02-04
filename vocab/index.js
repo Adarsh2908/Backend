@@ -8,7 +8,7 @@ const bodyParser = require('body-parser')
 
 // Variables
 const app = express()
-const PORT = 3000 || process.env.PORT
+const PORT = process.env.PORT
 
 
 // App Methods 
@@ -18,7 +18,9 @@ app.use(bodyParser.json())
 
 dbConnection()
 
-
+app.get('/', (req, res) =>{
+    res.send("Hello There")
+})
 
 //Routes 
 app.use('/user',userRouter)
