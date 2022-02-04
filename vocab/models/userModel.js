@@ -9,6 +9,7 @@ const userSchema = new mongoose.Schema({
         type: String,
         required:true,
         lowercase: true,
+        unique:true
     },
     password: {
         type: String,
@@ -29,11 +30,11 @@ const userSchema = new mongoose.Schema({
         
     },
     streak: {
-        type:Number,
+        type:String,
         required:true
     },
     missedDays:{
-        type:Number,
+        type:String,
         required:true
     }
 })
